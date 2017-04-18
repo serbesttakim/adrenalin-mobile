@@ -1,53 +1,27 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+	AppRegistry
 } from 'react-native';
+import {Actions, Scene, Router} from 'react-native-router-flux';
+
+import Start from './src/pages/start/start';
+import Login from './src/pages/login/login';
+import Main from './src/pages/main/main';
+import Register from './src/pages/register/register';
 
 export default class Adrenalin extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+	render() {
+		const scenes = Actions.create(
+			<Scene key="root">
+				<Scene key="Start" component={Start} hideNavBar={true}/>
+				<Scene key="Main" component={Main} hideNavBar={true}/>
+				<Scene key="Login" component={Login} hideNavBar={true}/>
+				<Scene key="Register" component={Register} hideNavBar={true}/>
+			</Scene>
+		);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+		return <Router scenes={scenes}/>
+	}
+}
 
 AppRegistry.registerComponent('Adrenalin', () => Adrenalin);
