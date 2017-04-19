@@ -2,7 +2,7 @@
 Bu uygulama adrenalin projesinin mobil uygulamasıdır.
 Klasör yapısı çok karmaşık olmaması ve hazır bulunan kodlardan faydalanılarak daha hızlı bir şekilde geliştirilmesi için [Buradaki](http://www.avarekodcu.com/konu/15/react-native-ornek-login-uygulamasi-1-projeyi-olusturuyoruz) makaleden faydanılmıştır.
 ## Klasör Yapısı
-LoginApp
+Adrenalin
 - src
   - assets
   - common
